@@ -1,5 +1,8 @@
 # ATM Simulation System (Java)
 
+## Version
+Version 1 (V1) - Basic CLI Implementation
+
 ## Overview
 This project is a simple ATM simulation system developed using Java.  
 It demonstrates fundamental programming concepts by simulating basic banking operations through a Command Line Interface (CLI).
