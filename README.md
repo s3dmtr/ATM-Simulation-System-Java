@@ -1,7 +1,25 @@
 # ATM Simulation System (Java)
 
-## Version
-Version 1 (V1) - Basic CLI Implementation
+## Versions
+
+### Version 1 (V1)
+Basic CLI implementation using fundamental programming concepts.
+
+### Version 2 (V2)
+Object-Oriented implementation using:
+- Classes and Objects
+- Encapsulation
+- Constructors
+- Methods for system operations
+
+### Upcoming (Version 2.5)
+- GUI using JOptionPane
+- Improved user interaction
+
+### Future (Version 3)
+- Python implementation
+- File handling (persistent data)
+- Enhanced system design
 
 ## Overview
 This project is a simple ATM simulation system developed using Java.  
