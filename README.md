@@ -51,7 +51,18 @@ Version 3:
 ---
 
 ## Sample Output
-To be added.
+
+### Check Balance
+![Check Balance](screenshots/balance.png)
+
+### Deposit
+![Deposit](screenshots/deposit.png)
+
+### Withdraw
+![Withdraw](screenshots/withdraw.png)
+
+### Exit
+![Exit](screenshots/exit.png)
 
 ---
 
