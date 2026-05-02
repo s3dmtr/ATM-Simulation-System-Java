@@ -1,17 +1,18 @@
-// Version 2.5 - GUI ATM System using JOptionPane
+package v2;
+
 import javax.swing.JOptionPane;
 
 public class ATMSystemGUI {
 
     public static void main(String[] args) {
 
-        // Create Account object
+        // Create Account
         Account account = new Account(1234, 1000.0);
 
         int attempts = 0;
         boolean isAuth = false;
 
-        // PIN verification
+        // PIN Verification
         while (attempts < 3) {
             String inputPin = JOptionPane.showInputDialog("Enter your PIN:");
 
@@ -25,62 +26,80 @@ public class ATMSystemGUI {
                 isAuth = true;
                 break;
             } else {
-                JOptionPane.showMessageDialog(null, "Incorrect PIN");
                 attempts++;
+                JOptionPane.showMessageDialog(null, "Incorrect PIN");
             }
         }
 
         if (!isAuth) {
-            JOptionPane.showMessageDialog(null, "Too many incorrect attempts. Exiting...");
+            JOptionPane.showMessageDialog(null, "Too many failed attempts.");
             return;
         }
 
-        int choice;
+        // ATM Menu Loop
+        while (true) {
 
-        do {
-            String menu = """
-                    --- ATM Menu ---
-                    1. Check Balance
-                    2. Deposit
-                    3. Withdraw
-                    4. Exit
-                    """;
+            String option = JOptionPane.showInputDialog(
+                    "ATM Menu:\n" +
+                    "1. Check Balance\n" +
+                    "2. Deposit\n" +
+                    "3. Withdraw\n" +
+                    "4. Exit\n\n" +
+                    "Choose an option:"
+            );
 
-            String inputChoice = JOptionPane.showInputDialog(menu + "\nChoose an option:");
-
-            if (inputChoice == null) {
+            if (option == null) {
                 return;
             }
 
-            choice = Integer.parseInt(inputChoice);
+            switch (option) {
 
-            if (choice == 1) {
-                JOptionPane.showMessageDialog(null,
-                        "Current Balance: " + account.getBalance());
+                case "1":
+                    JOptionPane.showMessageDialog(null,
+                            "Current Balance: " + account.getBalance());
+                    break;
 
-            } else if (choice == 2) {
-                String inputAmount = JOptionPane.showInputDialog("Enter amount to deposit:");
+                case "2":
+                    String depositInput = JOptionPane.showInputDialog("Enter amount to deposit:");
 
-                if (inputAmount == null) return;
+                    if (depositInput == null) break;
 
-                double amount = Double.parseDouble(inputAmount);
-                account.deposit(amount);
+                    double depositAmount = Double.parseDouble(depositInput);
 
-            } else if (choice == 3) {
-                String inputAmount = JOptionPane.showInputDialog("Enter amount to withdraw:");
+                    if (account.deposit(depositAmount)) {
+                        JOptionPane.showMessageDialog(null,
+                                "Deposit successful.\nNew Balance: " + account.getBalance());
+                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "Invalid amount.");
+                    }
+                    break;
 
-                if (inputAmount == null) return;
+                case "3":
+                    String withdrawInput = JOptionPane.showInputDialog("Enter amount to withdraw:");
 
-                double amount = Double.parseDouble(inputAmount);
-                account.withdraw(amount);
+                    if (withdrawInput == null) break;
 
-            } else if (choice == 4) {
-                JOptionPane.showMessageDialog(null, "Thank you for using the ATM.");
+                    double withdrawAmount = Double.parseDouble(withdrawInput);
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Invalid option.");
+                    if (account.withdraw(withdrawAmount)) {
+                        JOptionPane.showMessageDialog(null,
+                                "Withdrawal successful.\nNew Balance: " + account.getBalance());
+                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "Invalid amount or insufficient balance.");
+                    }
+                    break;
+
+                case "4":
+                    JOptionPane.showMessageDialog(null,
+                            "Thank you for using the ATM.");
+                    return;
+
+                default:
+                    JOptionPane.showMessageDialog(null,
+                            "Invalid option.");
             }
-
-        } while (choice != 4);
+        }
     }
 }
