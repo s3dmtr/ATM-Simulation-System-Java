@@ -72,22 +72,47 @@ Version 3:
 
 ---
 
-## Sample Output
+## Screenshots
+
+### Version 1 (CLI)
 
 ### Check Balance
 ![Check Balance](screenshots/balance.png)
 
-### Deposit
+### Deposit Operation
 ![Deposit](screenshots/deposit.png)
 
-### Withdraw
+### Withdraw Operation
 ![Withdraw](screenshots/withdraw.png)
 
 ### Exit
 ![Exit](screenshots/exit.png)
 
+
 ---
 
+### Version 2.5 (GUI using JOptionPane)
+
+### PIN Authentication
+![PIN](screenshots/PIN_V25.png)
+
+### Incorrect PIN
+![Incorrect PIN](screenshots/errorPIN_V25.png)
+
+### Main Menu
+![Menu](screenshots/menu_V25.png)
+
+### Check Balance
+![Check Balance GUI](screenshots/checkBalance_V25.png)
+
+### Deposit Operation
+![Deposit GUI](screenshots/deposit_V25.png)
+
+### Withdraw Operation
+![Withdraw GUI](screenshots/withdraw_V25.png)
+
+### Error Handling (Invalid / Insufficient Balance)
+![Error Balance](screenshots/errorBalance_V25.png)
 ## Author
 Cybersecurity student building a strong technical foundation and professional portfolio.
 
