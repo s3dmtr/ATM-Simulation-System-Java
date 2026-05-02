@@ -12,9 +12,10 @@ Object-Oriented implementation using:
 - Constructors
 - Methods for system operations
 
-### Upcoming (Version 2.5)
-- GUI using JOptionPane
-- Improved user interaction
+### Version 2.5 (V2.5)
+GUI implementation using:
+- JOptionPane for user interaction
+- Improved user experience compared to CLI
 
 ### Future (Version 3)
 - Python implementation
