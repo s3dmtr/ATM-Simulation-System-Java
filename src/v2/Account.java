@@ -1,3 +1,5 @@
+package v2;
+
 public class Account {
 
     // Attributes (Encapsulation)
@@ -21,22 +23,20 @@ public class Account {
     }
 
     // Deposit
-    public void deposit(double amount) {
+    public boolean deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposit successful. New Balance: " + balance);
-        } else {
-            System.out.println("Invalid amount.");
+            return true;
         }
+        return false;
     }
 
     // Withdraw
-    public void withdraw(double amount) {
+    public boolean withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Withdrawal successful. New Balance: " + balance);
-        } else {
-            System.out.println("Invalid amount or insufficient balance.");
+            return true;
         }
+        return false;
     }
 }
